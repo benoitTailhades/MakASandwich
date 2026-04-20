@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd1kuawurucga"
-path="res://.godot/imported/TunicTilesetV2.png-f3754309e835f8a9ed3f219e4fbcf3bb.ctex"
+uid="uid://d0afsdlmcju24"
+path="res://.godot/imported/Idle_up.png-d21db34a8b35ecd0942078c763748b8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TunicTilesetV2.png"
-dest_files=["res://.godot/imported/TunicTilesetV2.png-f3754309e835f8a9ed3f219e4fbcf3bb.ctex"]
+source_file="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Idle_up.png"
+dest_files=["res://.godot/imported/Idle_up.png-d21db34a8b35ecd0942078c763748b8b.ctex"]
 
 [params]
 

@@ -38,25 +38,13 @@ func player_movement():
 		%sprite.animation = character_direction
 	else:
 		velocity.y = 0
-		velocity.x = 0
-<<<<<<< HEAD
-
-	move_and_slide()
+		velocity.x = 0		
+		%sprite.animation = character_direction+"-Idle"
 
 	position.x = clamp(position.x, limit_left, limit_right)
 	position.y = clamp(position.y, limit_top, limit_bottom)
-
-=======
-		%sprite.animation = character_direction+"-Idle"
 	move_and_slide()
 
-
-<<<<<<< HEAD
-=======
-		
-=======
->>>>>>> 914cee875612a572ad5dd1d7ecc399b5adf28dce
->>>>>>> 8fba516b3ffb7e7dd217a2ba5b3848fa42829467
 func collect(item):
 	inv.insert(item)
 

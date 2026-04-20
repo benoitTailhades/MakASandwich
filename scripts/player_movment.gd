@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 var character_direction : Vector2
 
+@export var inv: Inv
+
 func _physics_process(delta: float) -> void:
 	
 	character_direction.x = Input.get_axis("move_left","move_right")
@@ -24,3 +26,6 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(Vector2.ZERO,mouvment_speed)
 	
 	move_and_slide()
+
+func collect(item):
+	inv.insert(item)

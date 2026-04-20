@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 var character_direction : String  = "Down"
 
+@export var inv: Inv
+
 func _physics_process(delta: float) -> void:
 	player_movement()
 	player_animation()
@@ -31,5 +33,7 @@ func player_movement():
 		velocity.x = 0
 	move_and_slide()
 
+func collect(item):
+	inv.insert(item)
 func player_animation():
 	%sprite.animation = character_direction

@@ -39,12 +39,8 @@ func player_movement():
 		%sprite.animation = character_direction+"-Idle"
 	move_and_slide()
 
-<<<<<<< HEAD
 
-		
-=======
 func collect(item):
 	inv.insert(item)
 func player_animation():
 	%sprite.animation = character_direction
->>>>>>> origin/main

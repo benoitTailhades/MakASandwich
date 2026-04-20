@@ -366,17 +366,21 @@ animations = [{
 size = Vector2(12, 11)
 
 [node name="Player" type="CharacterBody2D" unique_id=1283246152]
+y_sort_enabled = true
 script = ExtResource("1_g2els")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1465661486]
 unique_name_in_owner = true
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_f1ej7")
 animation = &"Down"
 autoplay = "Down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=484837431]
-position = Vector2(0, 2.5)
+y_sort_enabled = true
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_oprun")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=343574518]
+position = Vector2(0, 2)
 zoom = Vector2(4, 4)

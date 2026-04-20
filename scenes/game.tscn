@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://yspn6ia7vyq"]
 
 [ext_resource type="PackedScene" uid="uid://cgeu3uuqb4045" path="res://scenes/player.tscn" id="1_uwrxv"]
-[ext_resource type="PackedScene" uid="uid://dbif03rs2apfp" path="res://scenes/world.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://c5or0m6lmeco7" path="res://scenes/world.tscn" id="1_yqjtg"]
 
 [node name="Game" type="Node2D" unique_id=111376594]
 y_sort_enabled = true
@@ -13,3 +13,4 @@ y_sort_enabled = true
 position = Vector2(3, 44)
 motion_mode = 1
 mouvment_speed = 120.0
+inv = null

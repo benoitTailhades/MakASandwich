@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://d0l1euqj52ncg" path="res://assets/16x16 Animated Top-down Character V1.1/Full Spritesheet.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://gvrw3n865rfb" path="res://scripts/player_movment.gd" id="1_g2els"]
+[ext_resource type="Resource" uid="uid://gi7iqa6gwu2r" path="res://inventory/playerinv.tres" id="2_dqkch"]
+[ext_resource type="PackedScene" uid="uid://dnsb4p8h80any" path="res://inventory/inv_ui.tscn" id="4_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -368,6 +370,7 @@ size = Vector2(12, 11)
 [node name="Player" type="CharacterBody2D" unique_id=1283246152]
 y_sort_enabled = true
 script = ExtResource("1_g2els")
+inv = ExtResource("2_dqkch")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1465661486]
 unique_name_in_owner = true
@@ -384,3 +387,27 @@ shape = SubResource("RectangleShape2D_oprun")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=343574518]
 position = Vector2(0, 2)
 zoom = Vector2(4, 4)
+
+[node name="Inv_UI" parent="." unique_id=1922360496 instance=ExtResource("4_qlg0r")]
+custom_minimum_size = Vector2(0, 0)
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -18.0
+offset_right = 29.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inv_UI2" parent="." unique_id=636765880 instance=ExtResource("4_qlg0r")]
+custom_minimum_size = Vector2(0, 0)
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -18.0
+offset_right = 29.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2

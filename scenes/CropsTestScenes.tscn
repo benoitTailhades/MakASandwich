@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dc2ncqoxdkqww"]
+
+[ext_resource type="PackedScene" uid="uid://dl2vrcqb7uarr" path="res://scenes/components/day_night_cyce_component.tscn" id="1_fi406"]
+[ext_resource type="PackedScene" uid="uid://c5or0m6lmeco7" path="res://scenes/world.tscn" id="2_fomrs"]
+[ext_resource type="PackedScene" uid="uid://cgeu3uuqb4045" path="res://scenes/player.tscn" id="3_dvbh4"]
+[ext_resource type="PackedScene" uid="uid://breoesqvbas63" path="res://scenes/ui/game_screen.tscn" id="4_f6u4l"]
+
+[node name="TestSceneDayAndNight" type="Node2D" unique_id=1579221981]
+
+[node name="DayNightCycleComponent" parent="." unique_id=1500415340 instance=ExtResource("1_fi406")]
+
+[node name="world" parent="." unique_id=1908188910 instance=ExtResource("2_fomrs")]
+
+[node name="Player" parent="." unique_id=1283246152 instance=ExtResource("3_dvbh4")]
+position = Vector2(-5, 0)
+
+[node name="GameScreen" parent="." unique_id=229431338 instance=ExtResource("4_f6u4l")]

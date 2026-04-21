@@ -3,21 +3,16 @@
 [ext_resource type="Theme" uid="uid://niur2lltdn6c" path="res://scenes/ui/game_ui_theme.tres" id="1_e2vrk"]
 [ext_resource type="PackedScene" uid="uid://d2cev2x0i1xun" path="res://scenes/ui/tools_panel.tscn" id="2_gusqm"]
 [ext_resource type="PackedScene" uid="uid://bveqrnbefn25c" path="res://scenes/ui/inventory_panel.tscn" id="3_gusqm"]
+[ext_resource type="PackedScene" uid="uid://cnj1kh2fi4ucw" path="res://scenes/ui/day_and_night_panel.tscn" id="4_0kkfd"]
 [ext_resource type="PackedScene" uid="uid://bq8diqgtk1hxu" path="res://scenes/ui/crafting_panel.tscn" id="4_gkbp4"]
+[ext_resource type="PackedScene" uid="uid://24gdugp287av" path="res://scenes/ui/SandwichPanel.tscn" id="6_nwa5a"]
 
 [node name="GameScreen" type="CanvasLayer" unique_id=229431338]
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=341605556]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -800.0
-offset_bottom = -450.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=992721338]
+offset_right = 800.0
+offset_bottom = 450.0
 scale = Vector2(2, 2)
-size_flags_horizontal = 4
-size_flags_vertical = 4
 theme = ExtResource("1_e2vrk")
 
 [node name="InventoryPanel" parent="MarginContainer" unique_id=1421209023 instance=ExtResource("3_gusqm")]
@@ -33,3 +28,13 @@ size_flags_vertical = 8
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
+
+[node name="DayAndNightPanel" parent="MarginContainer" unique_id=611178433 instance=ExtResource("4_0kkfd")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="SandwichPanel" parent="MarginContainer" unique_id=1669848212 instance=ExtResource("6_nwa5a")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8

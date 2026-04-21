@@ -14,6 +14,7 @@ func add_collectable(collectable_name: String):
 
 	inventory_changed.emit()
 
+
 func remove_collectable(collectable_name: String):
 	inventory.get_or_add(collectable_name)
 	if inventory[collectable_name] == null:

@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://det0bbgnyfh4d"]
 
+[ext_resource type="Script" uid="uid://did4owx2hygir" path="res://scenes/interaction/interaction_area.gd" id="1_liumg"]
+
 [node name="InteractionArea" type="Area2D" unique_id=822867149]
+collision_layer = 0
+script = ExtResource("1_liumg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

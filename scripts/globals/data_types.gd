@@ -10,3 +10,11 @@ enum Tools{
 	PlantTomato
 
 }
+enum GrowthStates {
+	Seed,
+	Germination,
+	Vegetative,
+	Reproduction,
+	Maturity,
+	Harvesting
+}

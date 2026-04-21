@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c1ku5csoq5rhe"]
+
+[sub_resource type="GDScript" id="GDScript_5fxgo"]
+script/source = "class_name HurtComponent
+extends Area2D
+
+@export var tool: DataTypes.Tools = DataTypes.Tools.AxeWood
+
+signal hurt
+
+
+func _on_area_entered(area: Area2D) -> void:
+	var hit_component = area as HitComponent
+	if tool == hit_component.current_tool:
+		hurt.emit(hit_component.hit_damage)
+		
+"
+
+[node name="HurtComponent" type="Area2D" unique_id=735315841]
+collision_layer = 16
+collision_mask = 8
+script = SubResource("GDScript_5fxgo")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

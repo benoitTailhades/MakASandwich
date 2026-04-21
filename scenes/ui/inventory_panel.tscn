@@ -11,11 +11,11 @@
 atlas = ExtResource("2_b11k6")
 region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_us7qi"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b11k6"]
 load_path = "res://.godot/imported/Basic_tools_and_meterials.png-9f17fc6c6a93b2b447d4afdc6126ee64.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqitx"]
-atlas = SubResource("CompressedTexture2D_us7qi")
+atlas = SubResource("CompressedTexture2D_b11k6")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6o1n"]
@@ -26,11 +26,11 @@ region = Rect2(80, 0, 16, 16)
 atlas = ExtResource("4_4tgr1")
 region = Rect2(368, 32, 16, 16)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vni4r"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tdvod"]
 load_path = "res://.godot/imported/Fruit+.png-5ad889c313c23c03c7396f471a117660.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_louq3"]
-atlas = SubResource("CompressedTexture2D_vni4r")
+atlas = SubResource("CompressedTexture2D_tdvod")
 region = Rect2(416, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqs55"]

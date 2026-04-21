@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bnnrc68vbq57q"]
+
+[ext_resource type="Script" uid="uid://e07ua67qvla8" path="res://scenes/objects/structures/base_table.gd" id="1_kv0us"]
+[ext_resource type="Texture2D" uid="uid://dvoxufnwdypv1" path="res://assets/tileset/furniture-24x24-5x4-sheet.png" id="2_ajs0n"]
+[ext_resource type="Script" uid="uid://did4owx2hygir" path="res://scenes/interaction/interaction_area.gd" id="3_6ej6s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw35g"]
+atlas = ExtResource("2_ajs0n")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0bua"]
+radius = 19.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kv0us"]
+radius = 7.81025
+
+[node name="BaseTable" type="Node2D" unique_id=414816018]
+script = ExtResource("1_kv0us")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1613480418]
+texture = SubResource("AtlasTexture_nw35g")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=2023042847]
+collision_layer = 0
+script = ExtResource("3_6ej6s")
+action_name = "make a sandwich"
+metadata/_custom_type_script = "uid://did4owx2hygir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=900316660]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_m0bua")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=665054656]
+rotation = -3.2198348
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=11130720]
+position = Vector2(0, -2.3841858e-07)
+rotation = 1.0470774
+shape = SubResource("CircleShape2D_kv0us")
+debug_color = Color(0.9479342, 4.235506e-06, 0.5830692, 0.41960785)

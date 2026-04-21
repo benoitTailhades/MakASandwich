@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dnlifs1yki7rh"]
+
+[ext_resource type="Texture2D" uid="uid://cy1quecgi4bt2" path="res://assets/GHCP Demo V1/stone.png" id="1_oca81"]
+[ext_resource type="PackedScene" uid="uid://ss2t2hqbj1oi" path="res://scenes/components/collectable_component.tscn" id="2_k7uky"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgxlj"]
+atlas = ExtResource("1_oca81")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fip5g"]
+atlas = ExtResource("1_oca81")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruqxu"]
+atlas = ExtResource("1_oca81")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_036ot"]
+atlas = ExtResource("1_oca81")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_38q5d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgxlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fip5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruqxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_036ot")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wscew"]
+radius = 7.0
+
+[node name="stone" type="Sprite2D" unique_id=687145690]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1252316193]
+sprite_frames = SubResource("SpriteFrames_38q5d")
+autoplay = "default"
+frame_progress = 0.4556368
+
+[node name="CollectableComponent" parent="." unique_id=933559240 instance=ExtResource("2_k7uky")]
+collectable_name = "stone"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent" unique_id=1240208141]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_wscew")
+debug_color = Color(0.26537302, 0.6337465, 0, 0.41960785)

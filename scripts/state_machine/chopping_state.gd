@@ -3,6 +3,11 @@ extends NodeState
 
 @export var player: Player
 @export var animated_sprite_2d :AnimatedSprite2D 
+@export var hit_component_colision_shape: CollisionShape2D
+
+func _ready() -> void:
+	hit_component_colision_shape.disabled = true
+	hit_component_colision_shape.position = Vector2(0,0)
 
 func _on_process(_delta : float) -> void:
 	pass
@@ -21,16 +26,24 @@ func _on_next_transitions() -> void:
 func _on_enter() -> void:
 	if player.player_direction == Vector2.UP:
 		animated_sprite_2d.play("Up-Chop")
+		hit_component_colision_shape.position = Vector2(0,-14)
 	elif player.player_direction == Vector2.RIGHT:
 		animated_sprite_2d.play("Right-Chop")
+		hit_component_colision_shape.position = Vector2(14,0)
 	elif player.player_direction == Vector2.LEFT:
 		animated_sprite_2d.play("Left-Chop")
+		hit_component_colision_shape.position = Vector2(-14,0)
 	elif player.player_direction == Vector2.DOWN:
 		animated_sprite_2d.play("Down-Chop")
+		hit_component_colision_shape.position = Vector2(0,14)
 	else:
 		animated_sprite_2d.play("Up-Chop")
+		hit_component_colision_shape.position = Vector2(0,14)
+		
+	hit_component_colision_shape.disabled = false
 	
 
 
 func _on_exit() -> void:
 	animated_sprite_2d.stop()
+	hit_component_colision_shape.disabled = true

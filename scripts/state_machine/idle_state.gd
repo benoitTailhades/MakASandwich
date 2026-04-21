@@ -33,7 +33,7 @@ func _on_next_transitions() -> void:
 		
 	if player.current_tool == DataTypes.Tools.AxeWood && GameInputEvents.use_tool():
 		transition.emit("Chopping")
-	elif player.current_tool == DataTypes.Tools.Pickaxe && GameInputEvents.use_tool():
+	elif player.current_tool == DataTypes.Tools.MineStone && GameInputEvents.use_tool():
 		transition.emit("Mining")
 	elif player.current_tool == DataTypes.Tools.TillGround && GameInputEvents.use_tool():
 		transition.emit("Tilling")

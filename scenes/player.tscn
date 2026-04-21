@@ -18,7 +18,6 @@
 [ext_resource type="Script" uid="uid://dddouhdtijh6x" path="res://scripts/state_machine/node_state_machine.gd" id="9_y4r1p"]
 [ext_resource type="Script" uid="uid://bgmtl8agjsl88" path="res://scripts/state_machine/idle_state.gd" id="10_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://dhfhsfm4ck1dv" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Left-Till.png" id="10_ujl30"]
-[ext_resource type="Script" uid="uid://bndjok5x603a2" path="res://hit_component.gd" id="11_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://btxfejvwuqlkt" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Right-Mine.png" id="11_a38lo"]
 [ext_resource type="Script" uid="uid://dif1q3bpqc4li" path="res://scripts/state_machine/walk_state.gd" id="11_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://bfycnhn80hgc4" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Leftt-Watering.png" id="12_wnwbv"]
@@ -27,10 +26,11 @@
 [ext_resource type="Script" uid="uid://co2cu0csshqfs" path="res://scripts/state_machine/chopping_state.gd" id="16_fulsm"]
 [ext_resource type="Texture2D" uid="uid://cov7p7nub3qge" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Right-Watering.png" id="17_gl8cc"]
 [ext_resource type="Texture2D" uid="uid://dsuiy3lbeypiv" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Up-Till.png" id="18_pf23h"]
-[ext_resource type="Script" path="res://scripts/state_machine/mining_state.gd" id="20_l71n6"]
+[ext_resource type="Script" uid="uid://bcrfd3a71aa48" path="res://scripts/state_machine/mining_state.gd" id="20_l71n6"]
 [ext_resource type="Texture2D" uid="uid://bx6dhaia0cfy5" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Up-Watering.png" id="22_487ah"]
-[ext_resource type="Script" path="res://scripts/state_machine/tilling_state.gd" id="25_dt7fs"]
+[ext_resource type="Script" uid="uid://bimif2bf8pr5p" path="res://scripts/state_machine/tilling_state.gd" id="25_dt7fs"]
 [ext_resource type="Script" uid="uid://bjvigdhxd3jm0" path="res://scripts/state_machine/watering-state.gd" id="30_md1ol"]
+[ext_resource type="PackedScene" uid="uid://cfdkvk54fxuig" path="res://scenes/components/hit_component.tscn" id="31_wnwbv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -915,7 +915,7 @@ animations = [{
 size = Vector2(12, 11)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wnwbv"]
-radius = 4.0
+radius = 6.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1283246152]
 y_sort_enabled = true
@@ -926,7 +926,7 @@ current_tool = 4
 unique_name_in_owner = true
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_f1ej7")
-animation = &"Right-Watering"
+animation = &"Down-Chop"
 autoplay = "Down-Idle"
 frame = 2
 frame_progress = 1.0
@@ -956,10 +956,11 @@ script = ExtResource("11_d2wvv")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
 
-[node name="Chopping" type="Node" parent="StateMachine" unique_id=228140844 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Chopping" type="Node" parent="StateMachine" unique_id=228140844 node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_colision_shape")]
 script = ExtResource("16_fulsm")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
+hit_component_colision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
 [node name="Mining" type="Node" parent="StateMachine" unique_id=988454980 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("20_l71n6")
@@ -976,11 +977,9 @@ script = ExtResource("30_md1ol")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
 
-[node name="HitComponent" type="Area2D" parent="." unique_id=1611741812]
-script = ExtResource("11_3v2ag")
-metadata/_custom_type_script = "uid://bndjok5x603a2"
+[node name="HitComponent" parent="." unique_id=292545747 instance=ExtResource("31_wnwbv")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitComponent" unique_id=1004205017]
-position = Vector2(0, 8)
+[node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent" unique_id=629716711]
+position = Vector2(0, 14)
 shape = SubResource("CircleShape2D_wnwbv")
 debug_color = Color(0.84027904, 0.0011514801, 0.9238308, 0.41960785)

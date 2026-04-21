@@ -9,8 +9,6 @@ var player_direction : Vector2
 
 func _ready():
 	ToolManager.tool_selected.connect(on_tool_selected)
-	for i in range(5):
-		InventoryManager.add_collectable("stone")
 
 func on_tool_selected(tool: DataTypes.Tools):
 	current_tool = tool

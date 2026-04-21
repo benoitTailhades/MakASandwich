@@ -31,8 +31,8 @@ func _on_physics_process(_delta : float) -> void:
 		player.player_direction = direction 
 		
 	player.velocity = direction * speed
-	player.position.x = clamp(player.position.x,limit_left,limit_right)
-	player.position.y = clamp(player.position.y,limit_top,limit_bottom)
+	player.position.x = round(clamp(player.position.x,limit_left,limit_right))
+	player.position.y = round(clamp(player.position.y,limit_top,limit_bottom))
 	player.move_and_slide()
 	
 

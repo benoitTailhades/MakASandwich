@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://det0bbgnyfh4d"]
+
+[node name="InteractionArea" type="Area2D" unique_id=822867149]

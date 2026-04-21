@@ -9,7 +9,11 @@ var player_direction : Vector2
 
 func _ready():
 	ToolManager.tool_selected.connect(on_tool_selected)
-
+	
 func on_tool_selected(tool: DataTypes.Tools):
 	current_tool = tool
 	hit_component.current_tool = tool
+	
+func _process(delta: float) -> void:
+	print(InventoryManager.inventory)
+	

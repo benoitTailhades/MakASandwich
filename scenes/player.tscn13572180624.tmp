@@ -26,11 +26,11 @@
 [ext_resource type="Script" uid="uid://co2cu0csshqfs" path="res://scripts/state_machine/chopping_state.gd" id="16_fulsm"]
 [ext_resource type="Texture2D" uid="uid://cov7p7nub3qge" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Right-Watering.png" id="17_gl8cc"]
 [ext_resource type="Texture2D" uid="uid://dsuiy3lbeypiv" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Up-Till.png" id="18_pf23h"]
-[ext_resource type="Script" uid="uid://bcrfd3a71aa48" path="res://scripts/state_machine/mining_state.gd" id="20_l71n6"]
+[ext_resource type="Script" path="res://scripts/state_machine/mining_state.gd" id="20_l71n6"]
 [ext_resource type="Texture2D" uid="uid://bx6dhaia0cfy5" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Up-Watering.png" id="22_487ah"]
-[ext_resource type="Script" uid="uid://bimif2bf8pr5p" path="res://scripts/state_machine/tilling_state.gd" id="25_dt7fs"]
+[ext_resource type="Script" path="res://scripts/state_machine/tilling_state.gd" id="25_dt7fs"]
 [ext_resource type="Script" uid="uid://bjvigdhxd3jm0" path="res://scripts/state_machine/watering-state.gd" id="30_md1ol"]
-[ext_resource type="Script" uid="uid://bndjok5x603a2" path="res://scenes/components/hit_component.gd" id="31_wnwbv"]
+[ext_resource type="PackedScene" uid="uid://cfdkvk54fxuig" path="res://scenes/components/hit_component.tscn" id="31_wnwbv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -939,10 +939,6 @@ shape = SubResource("RectangleShape2D_oprun")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=343574518]
 position = Vector2(0, 2)
 zoom = Vector2(4, 4)
-limit_left = -480
-limit_top = -976
-limit_right = 2832
-limit_bottom = 320
 
 [node name="GameScreen" parent="Camera2D" unique_id=229431338 instance=ExtResource("7_y4r1p")]
 
@@ -959,7 +955,6 @@ animated_sprite_2d = NodePath("../../sprite")
 script = ExtResource("11_d2wvv")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
-speed = 100
 
 [node name="Chopping" type="Node" parent="StateMachine" unique_id=228140844 node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_colision_shape")]
 script = ExtResource("16_fulsm")
@@ -967,11 +962,10 @@ player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
 hit_component_colision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
-[node name="Mining" type="Node" parent="StateMachine" unique_id=988454980 node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_colision_shape")]
+[node name="Mining" type="Node" parent="StateMachine" unique_id=988454980 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("20_l71n6")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
-hit_component_colision_shape = NodePath("../../HitComponent/HitComponentCollisionShape2D")
 
 [node name="Tilling" type="Node" parent="StateMachine" unique_id=641632112 node_paths=PackedStringArray("player", "animated_sprite_2d")]
 script = ExtResource("25_dt7fs")
@@ -983,11 +977,8 @@ script = ExtResource("30_md1ol")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
 
-[node name="HitComponent" type="Area2D" parent="." unique_id=659208262]
-collision_layer = 8
-collision_mask = 16
-script = ExtResource("31_wnwbv")
-metadata/_custom_type_script = "uid://bndjok5x603a2"
+[node name="HitComponent" parent="." unique_id=292545747 instance=ExtResource("31_wnwbv")]
+script = null
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent" unique_id=629716711]
 position = Vector2(0, 14)

@@ -1,4 +1,3 @@
-
 extends NodeState
 
 @export var player: Player
@@ -41,7 +40,6 @@ func _on_enter() -> void:
 		hit_component_colision_shape.position = Vector2(0,14)
 		
 	hit_component_colision_shape.disabled = false
-	
 
 
 func _on_exit() -> void:

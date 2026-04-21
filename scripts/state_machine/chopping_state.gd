@@ -1,4 +1,3 @@
-
 extends NodeState
 
 @export var player: Player
@@ -29,8 +28,6 @@ func _on_enter() -> void:
 		animated_sprite_2d.play("Down-Chop")
 	else:
 		animated_sprite_2d.play("Up-Chop")
-	
-
 
 func _on_exit() -> void:
 	animated_sprite_2d.stop()

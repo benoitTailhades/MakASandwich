@@ -18,9 +18,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 ToolManager="*uid://cp6o1t42b8bq0"
+InventoryManager="*uid://0bh4gxop3l1q"
 
 [display]
 
+window/size/viewport_width=1600
+window/size/viewport_height=900
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"

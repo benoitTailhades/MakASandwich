@@ -30,15 +30,16 @@ func _on_next_transitions() -> void:
 	
 	if GameInputEvents.is_movement_input():
 		transition.emit("Walk")
-		
-	if player.current_tool == DataTypes.Tools.AxeWood && GameInputEvents.use_tool():
-		transition.emit("Chopping")
-	elif player.current_tool == DataTypes.Tools.Pickaxe && GameInputEvents.use_tool():
-		transition.emit("Mining")
-	elif player.current_tool == DataTypes.Tools.TillGround && GameInputEvents.use_tool():
-		transition.emit("Tilling")
-	elif player.current_tool == DataTypes.Tools.WaterCrops && GameInputEvents.use_tool():
-		transition.emit("Watering")
+	
+	if GameInputEvents.use_tool():
+		if player.current_tool == DataTypes.Tools.AxeWood:
+			transition.emit("Chopping")
+		elif player.current_tool == DataTypes.Tools.MineStone:
+			transition.emit("Mining")
+		elif player.current_tool == DataTypes.Tools.TillGround:
+			transition.emit("Tilling")
+		elif player.current_tool == DataTypes.Tools.WaterCrops:
+			transition.emit("Watering")
 		
 
 

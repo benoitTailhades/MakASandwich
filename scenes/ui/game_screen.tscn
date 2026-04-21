@@ -2,6 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://niur2lltdn6c" path="res://scenes/ui/game_ui_theme.tres" id="1_e2vrk"]
 [ext_resource type="PackedScene" uid="uid://d2cev2x0i1xun" path="res://scenes/ui/tools_panel.tscn" id="2_gusqm"]
+[ext_resource type="PackedScene" uid="uid://bveqrnbefn25c" path="res://scenes/ui/inventory_panel.tscn" id="3_gusqm"]
+[ext_resource type="PackedScene" uid="uid://bq8diqgtk1hxu" path="res://scenes/ui/crafting_panel.tscn" id="4_gkbp4"]
 
 [node name="GameScreen" type="CanvasLayer" unique_id=229431338]
 
@@ -9,8 +11,8 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -565.0
-offset_bottom = -313.5
+offset_right = -800.0
+offset_bottom = -450.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -18,6 +20,16 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_e2vrk")
 
+[node name="InventoryPanel" parent="MarginContainer" unique_id=1421209023 instance=ExtResource("3_gusqm")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
 [node name="ToolsPanel" parent="MarginContainer" unique_id=1607970082 instance=ExtResource("2_gusqm")]
 layout_mode = 2
 size_flags_vertical = 8
+
+[node name="CraftingPanel" parent="MarginContainer" unique_id=835905794 instance=ExtResource("4_gkbp4")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4

@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://dddouhdtijh6x" path="res://scripts/state_machine/node_state_machine.gd" id="9_y4r1p"]
 [ext_resource type="Script" uid="uid://bgmtl8agjsl88" path="res://scripts/state_machine/idle_state.gd" id="10_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://dhfhsfm4ck1dv" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Left-Till.png" id="10_ujl30"]
-[ext_resource type="Script" uid="uid://bndjok5x603a2" path="res://hit_component.gd" id="11_3v2ag"]
+[ext_resource type="Script" uid="uid://bndjok5x603a2" path="res://scripts/hit_component.gd" id="11_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://btxfejvwuqlkt" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Right-Mine.png" id="11_a38lo"]
 [ext_resource type="Script" uid="uid://dif1q3bpqc4li" path="res://scripts/state_machine/walk_state.gd" id="11_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://bfycnhn80hgc4" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Leftt-Watering.png" id="12_wnwbv"]

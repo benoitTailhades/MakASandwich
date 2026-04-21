@@ -65,6 +65,14 @@ hit={
 ]
 }
 
+[layer_names]
+
+2d_navigation/layer_1="Chicken Navigation"
+2d_physics/layer_4="Tool"
+2d_physics/layer_5="Object"
+2d_physics/layer_6="Collectable"
+
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
@@ -73,4 +81,5 @@ hit={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+2d/snap/snap_2d_transforms_to_pixel=true
 config_version=5

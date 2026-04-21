@@ -71,7 +71,7 @@ texture = SubResource("AtlasTexture_7yjab")
 
 [node name="LogLabel" type="Label" parent="MarginContainer/VBoxContainer/Logs" unique_id=1785432095]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"
 text = "0"
@@ -89,7 +89,7 @@ texture = SubResource("AtlasTexture_eqitx")
 
 [node name="StoneLabel" type="Label" parent="MarginContainer/VBoxContainer/Stone" unique_id=122669022]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"
 text = "0"
@@ -107,7 +107,7 @@ texture = SubResource("AtlasTexture_u6o1n")
 
 [node name="CornLabel" type="Label" parent="MarginContainer/VBoxContainer/Corn" unique_id=27282310]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"
 text = "0"
@@ -125,7 +125,7 @@ texture = SubResource("AtlasTexture_0lmsk")
 
 [node name="TomatoLabel" type="Label" parent="MarginContainer/VBoxContainer/Tomato" unique_id=170509257]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"
 text = "0"
@@ -143,7 +143,7 @@ texture = SubResource("AtlasTexture_louq3")
 
 [node name="SaladLabel" type="Label" parent="MarginContainer/VBoxContainer/Salad" unique_id=371689876]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"
 text = "0"
@@ -161,7 +161,7 @@ texture = SubResource("AtlasTexture_uqs55")
 
 [node name="ChickenLabel" type="Label" parent="MarginContainer/VBoxContainer/Chicken" unique_id=53932283]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"
 text = "0"
@@ -179,7 +179,7 @@ texture = SubResource("AtlasTexture_lcq1t")
 
 [node name="BreadLabel" type="Label" parent="MarginContainer/VBoxContainer/Bread" unique_id=1165735500]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"
 text = "0"

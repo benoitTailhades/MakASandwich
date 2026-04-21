@@ -17,7 +17,7 @@ func add_collectable(collectable_name: String):
 func remove_collectable(collectable_name: String):
 	inventory.get_or_add(collectable_name)
 	if inventory[collectable_name] == null:
-		pass
+		inventory.erase("collectable_name")
 	elif inventory[collectable_name] == 0:
 		pass
 	else:

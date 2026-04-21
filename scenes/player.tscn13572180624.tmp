@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bx6dhaia0cfy5" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Up-Watering.png" id="22_487ah"]
 [ext_resource type="Script" path="res://scripts/state_machine/tilling_state.gd" id="25_dt7fs"]
 [ext_resource type="Script" uid="uid://bjvigdhxd3jm0" path="res://scripts/state_machine/watering-state.gd" id="30_md1ol"]
-[ext_resource type="Script" uid="uid://bndjok5x603a2" path="res://scenes/components/hit_component.gd" id="31_wnwbv"]
+[ext_resource type="PackedScene" uid="uid://cfdkvk54fxuig" path="res://scenes/components/hit_component.tscn" id="31_wnwbv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -977,11 +977,8 @@ script = ExtResource("30_md1ol")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
 
-[node name="HitComponent" type="Area2D" parent="." unique_id=659208262]
-collision_layer = 8
-collision_mask = 16
-script = ExtResource("31_wnwbv")
-metadata/_custom_type_script = "uid://bndjok5x603a2"
+[node name="HitComponent" parent="." unique_id=292545747 instance=ExtResource("31_wnwbv")]
+script = null
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent" unique_id=629716711]
 position = Vector2(0, 14)

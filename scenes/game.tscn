@@ -2,6 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://cgeu3uuqb4045" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c5or0m6lmeco7" path="res://scenes/world.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://nl60pt5wgepw" path="res://scenes/chicken/chicken.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cedmf4gqniwkh" path="res://scenes/Wolves/wolves.tscn" id="4_iywne"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_lbhrr"]
+vertices = PackedVector2Array(414.1172, -725.6094, 668.1875, 243.57031, -437.2422, 294.53125, -463.72656, -799.10156)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-474, -810, 422, -735, 681, 253, -447, 305)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_iywne"]
+vertices = PackedVector2Array(529.02344, 406.02344, -440.8125, 407.97656, -690.84375, -836.22656, 410.89844, -857.8125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-703, -846, 420, -868, 540, 416, -449, 418)])
 
 [node name="Game" type="Node2D" unique_id=111376594]
 y_sort_enabled = true
@@ -12,3 +24,88 @@ y_sort_enabled = true
 [node name="Player" parent="." unique_id=1283246152 instance=ExtResource("1_uwrxv")]
 position = Vector2(3, 44)
 motion_mode = 1
+
+[node name="Chickens" type="Node2D" parent="." unique_id=1073686124]
+y_sort_enabled = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens" unique_id=323876962]
+navigation_polygon = SubResource("NavigationPolygon_lbhrr")
+
+[node name="Chicken" parent="Chickens" unique_id=1800677912 instance=ExtResource("3_lbhrr")]
+position = Vector2(-32, -645)
+
+[node name="Chicken2" parent="Chickens" unique_id=659529930 instance=ExtResource("3_lbhrr")]
+position = Vector2(167, 155)
+
+[node name="Chicken3" parent="Chickens" unique_id=802929475 instance=ExtResource("3_lbhrr")]
+position = Vector2(-299, 127)
+
+[node name="Chicken4" parent="Chickens" unique_id=1553131177 instance=ExtResource("3_lbhrr")]
+position = Vector2(316, 113)
+
+[node name="Chicken5" parent="Chickens" unique_id=549602394 instance=ExtResource("3_lbhrr")]
+position = Vector2(101, -361)
+
+[node name="Chicken6" parent="Chickens" unique_id=122573708 instance=ExtResource("3_lbhrr")]
+position = Vector2(-316, -280)
+
+[node name="Chicken7" parent="Chickens" unique_id=1233380835 instance=ExtResource("3_lbhrr")]
+position = Vector2(-104, -397)
+
+[node name="Chicken8" parent="Chickens" unique_id=966355982 instance=ExtResource("3_lbhrr")]
+position = Vector2(199, -316)
+
+[node name="Wolves" type="Node2D" parent="." unique_id=1706238583]
+y_sort_enabled = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Wolves" unique_id=317643677]
+position = Vector2(1392, -90)
+navigation_polygon = SubResource("NavigationPolygon_iywne")
+
+[node name="Wolves" parent="Wolves" unique_id=660138440 instance=ExtResource("4_iywne")]
+position = Vector2(1176, -388)
+
+[node name="Wolves2" parent="Wolves" unique_id=1788787355 instance=ExtResource("4_iywne")]
+position = Vector2(1637, -328)
+
+[node name="Wolves3" parent="Wolves" unique_id=280281969 instance=ExtResource("4_iywne")]
+position = Vector2(1477, -928)
+
+[node name="Wolves4" parent="Wolves" unique_id=611259071 instance=ExtResource("4_iywne")]
+position = Vector2(965, -858)
+
+[node name="Wolves5" parent="Wolves" unique_id=1000683681 instance=ExtResource("4_iywne")]
+position = Vector2(1663, 123)
+
+[node name="Wolves6" parent="Wolves" unique_id=312014110 instance=ExtResource("4_iywne")]
+position = Vector2(965, -858)
+
+[node name="Wolves7" parent="Wolves" unique_id=344017834 instance=ExtResource("4_iywne")]
+position = Vector2(1512, -387)
+
+[node name="Wolves8" parent="Wolves" unique_id=1477206843 instance=ExtResource("4_iywne")]
+position = Vector2(1000, -317)
+
+[node name="Wolves9" parent="Wolves" unique_id=1627253979 instance=ExtResource("4_iywne")]
+position = Vector2(1091, -743)
+
+[node name="Wolves10" parent="Wolves" unique_id=1194544470 instance=ExtResource("4_iywne")]
+position = Vector2(965, -858)
+
+[node name="Wolves11" parent="Wolves" unique_id=674094897 instance=ExtResource("4_iywne")]
+position = Vector2(1512, -387)
+
+[node name="Wolves12" parent="Wolves" unique_id=589450798 instance=ExtResource("4_iywne")]
+position = Vector2(1000, -317)
+
+[node name="Wolves13" parent="Wolves" unique_id=747580601 instance=ExtResource("4_iywne")]
+position = Vector2(1512, -387)
+
+[node name="Wolves14" parent="Wolves" unique_id=262626054 instance=ExtResource("4_iywne")]
+position = Vector2(1000, -317)
+
+[node name="Wolves15" parent="Wolves" unique_id=1439838434 instance=ExtResource("4_iywne")]
+position = Vector2(1486, 215)
+
+[node name="Wolves16" parent="Wolves" unique_id=612075066 instance=ExtResource("4_iywne")]
+position = Vector2(1036, 192)

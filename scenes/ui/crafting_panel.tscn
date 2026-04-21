@@ -2,11 +2,18 @@
 
 [ext_resource type="Theme" uid="uid://niur2lltdn6c" path="res://scenes/ui/game_ui_theme.tres" id="1_3qgw3"]
 [ext_resource type="Script" uid="uid://bigxw808ly8uj" path="res://scenes/ui/crafting_panel.gd" id="2_trjts"]
-[ext_resource type="Texture2D" uid="uid://b6w8f2vaa83y4" path="res://assets/ui/Basic_tools_and_meterials.png" id="3_el456"]
+[ext_resource type="Texture2D" uid="uid://dvoxufnwdypv1" path="res://assets/tileset/furniture-24x24-5x4-sheet.png" id="3_3qgw3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trjts"]
+atlas = ExtResource("3_3qgw3")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_el456"]
+load_path = "res://.godot/imported/furniture-24x24-5x4-sheet.png-012eae6fdc1daf10db667d15a3a8fe52.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p06gr"]
-atlas = ExtResource("3_el456")
-region = Rect2(16, 0, 16, 16)
+atlas = SubResource("CompressedTexture2D_el456")
+region = Rect2(24, 24, 24, 24)
 
 [node name="CraftingPanel" type="PanelContainer" unique_id=835905794]
 theme = ExtResource("1_3qgw3")
@@ -28,7 +35,16 @@ custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
 disabled = true
+icon = SubResource("AtlasTexture_trjts")
+icon_alignment = 1
+
+[node name="Oven" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2058053404]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+disabled = true
 icon = SubResource("AtlasTexture_p06gr")
 icon_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BaseTable" to="." method="_on_base_table_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Oven" to="." method="_on_oven_pressed"]

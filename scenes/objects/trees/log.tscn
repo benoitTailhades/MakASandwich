@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bf82gges8sqap"]
+
+[ext_resource type="Texture2D" uid="uid://r8exdb8p7yok" path="res://assets/GHCP Demo V1/Log.png" id="1_bcctm"]
+[ext_resource type="PackedScene" uid="uid://ss2t2hqbj1oi" path="res://scenes/components/collectable_component.tscn" id="2_e2a05"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2a05"]
+atlas = ExtResource("1_bcctm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5rqd"]
+atlas = ExtResource("1_bcctm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xm6ke"]
+atlas = ExtResource("1_bcctm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_588pv"]
+atlas = ExtResource("1_bcctm")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bufl"]
+atlas = ExtResource("1_bcctm")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuq0i"]
+atlas = ExtResource("1_bcctm")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbc6r"]
+atlas = ExtResource("1_bcctm")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6ge4"]
+atlas = ExtResource("1_bcctm")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3k58x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2a05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5rqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xm6ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_588pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bufl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuq0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbc6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6ge4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s5rqd"]
+radius = 8.0
+
+[node name="Log" type="Sprite2D" unique_id=799206478]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1031875172]
+sprite_frames = SubResource("SpriteFrames_3k58x")
+autoplay = "default"
+frame_progress = 0.373734
+
+[node name="CollectableComponent" parent="." unique_id=933559240 instance=ExtResource("2_e2a05")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent" unique_id=1670516986]
+shape = SubResource("CircleShape2D_s5rqd")
+debug_color = Color(0.34423926, 0.610901, 0.32496145, 0.41960785)

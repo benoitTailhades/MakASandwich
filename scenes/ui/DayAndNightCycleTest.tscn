@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dqabagwr827lw"]
+
+[ext_resource type="PackedScene" uid="uid://dl2vrcqb7uarr" path="res://scenes/day_night_cyce_component.tscn" id="1_f50hw"]
+[ext_resource type="PackedScene" uid="uid://c5or0m6lmeco7" path="res://scenes/world.tscn" id="1_jfmdc"]
+[ext_resource type="PackedScene" uid="uid://cgeu3uuqb4045" path="res://scenes/player.tscn" id="2_f50hw"]
+[ext_resource type="PackedScene" uid="uid://breoesqvbas63" path="res://scenes/ui/game_screen.tscn" id="3_bhll1"]
+[ext_resource type="PackedScene" uid="uid://bhwbq1fk4y0gp" path="res://scenes/corn.tscn" id="5_bhll1"]
+
+[node name="TestSceneDayAndNight" type="Node2D" unique_id=1579221981]
+
+[node name="DayNightCycleComponent" parent="." unique_id=1500415340 instance=ExtResource("1_f50hw")]
+visible = false
+
+[node name="world" parent="." unique_id=1908188910 instance=ExtResource("1_jfmdc")]
+
+[node name="Player" parent="." unique_id=1283246152 instance=ExtResource("2_f50hw")]
+position = Vector2(-5, 0)
+
+[node name="GameScreen" parent="." unique_id=229431338 instance=ExtResource("3_bhll1")]
+
+[node name="Corn" parent="." unique_id=24261176 instance=ExtResource("5_bhll1")]
+position = Vector2(-30, 50)

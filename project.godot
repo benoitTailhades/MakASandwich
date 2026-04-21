@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ToolManager="*uid://cp6o1t42b8bq0"
+DayAndNightCycleManager="*uid://bwr1x2gi6edoc"
 
 [display]
 

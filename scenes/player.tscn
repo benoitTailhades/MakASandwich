@@ -18,19 +18,18 @@
 [ext_resource type="Script" uid="uid://dddouhdtijh6x" path="res://scripts/state_machine/node_state_machine.gd" id="9_y4r1p"]
 [ext_resource type="Script" uid="uid://bgmtl8agjsl88" path="res://scripts/state_machine/idle_state.gd" id="10_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://dhfhsfm4ck1dv" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Left-Till.png" id="10_ujl30"]
-[ext_resource type="Script" uid="uid://bndjok5x603a2" path="res://hit_component.gd" id="11_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://btxfejvwuqlkt" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Right-Mine.png" id="11_a38lo"]
 [ext_resource type="Script" uid="uid://dif1q3bpqc4li" path="res://scripts/state_machine/walk_state.gd" id="11_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://bfycnhn80hgc4" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Leftt-Watering.png" id="12_wnwbv"]
 [ext_resource type="Texture2D" uid="uid://dtbxpesq3oqke" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Up-Mine.png" id="14_4ni07"]
 [ext_resource type="Texture2D" uid="uid://cowahbbk1kcvm" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Right-Till.png" id="14_31cv2"]
-[ext_resource type="Script" uid="uid://co2cu0csshqfs" path="res://scripts/state_machine/chopping_state.gd" id="16_fulsm"]
+[ext_resource type="Script" path="res://scripts/state_machine/chopping_state.gd" id="16_fulsm"]
 [ext_resource type="Texture2D" uid="uid://cov7p7nub3qge" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Right-Watering.png" id="17_gl8cc"]
 [ext_resource type="Texture2D" uid="uid://dsuiy3lbeypiv" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Up-Till.png" id="18_pf23h"]
 [ext_resource type="Script" path="res://scripts/state_machine/mining_state.gd" id="20_l71n6"]
 [ext_resource type="Texture2D" uid="uid://bx6dhaia0cfy5" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Up-Watering.png" id="22_487ah"]
 [ext_resource type="Script" path="res://scripts/state_machine/tilling_state.gd" id="25_dt7fs"]
-[ext_resource type="Script" uid="uid://bjvigdhxd3jm0" path="res://scripts/state_machine/watering-state.gd" id="30_md1ol"]
+[ext_resource type="Script" uid="uid://bndjok5x603a2" path="res://scripts/hit_component.gd" id="30_wqfne"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -971,14 +970,10 @@ script = ExtResource("25_dt7fs")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
 
-[node name="Watering" type="Node" parent="StateMachine" unique_id=462645956 node_paths=PackedStringArray("player", "animated_sprite_2d")]
-script = ExtResource("30_md1ol")
-player = NodePath("../..")
-animated_sprite_2d = NodePath("../../sprite")
+[node name="Watering" type="Node" parent="StateMachine" unique_id=462645956]
 
 [node name="HitComponent" type="Area2D" parent="." unique_id=1611741812]
-script = ExtResource("11_3v2ag")
-metadata/_custom_type_script = "uid://bndjok5x603a2"
+script = ExtResource("30_wqfne")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitComponent" unique_id=1004205017]
 position = Vector2(0, 8)

@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d0afsdlmcju24" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Idle_up.png" id="5_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://dnsb4p8h80any" path="res://inventory/inv_ui.tscn" id="8_smehm"]
 [ext_resource type="Script" uid="uid://dddouhdtijh6x" path="res://scripts/state_machine/node_state_machine.gd" id="9_y4r1p"]
-[ext_resource type="Script" uid="uid://bgmtl8agjsl88" path="res://scripts/state_machine/idle_state.gd" id="10_d2wvv"]
-[ext_resource type="Script" uid="uid://dif1q3bpqc4li" path="res://scripts/state_machine/walk_state.gd" id="11_d2wvv"]
+[ext_resource type="Script" uid="uid://bgmtl8agjsl88" path="res://scenes/idle_state.gd" id="10_d2wvv"]
+[ext_resource type="Script" uid="uid://dif1q3bpqc4li" path="res://scenes/walk_state.gd" id="11_d2wvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -500,7 +500,6 @@ position = Vector2(0, 2)
 zoom = Vector2(4, 4)
 
 [node name="Inv_UI" parent="." unique_id=1922360496 instance=ExtResource("8_smehm")]
-z_index = 1
 custom_minimum_size = Vector2(0, 0)
 anchors_preset = -1
 anchor_right = 0.5
@@ -525,3 +524,4 @@ animated_sprite_2d = NodePath("../../sprite")
 script = ExtResource("11_d2wvv")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
+speed = null

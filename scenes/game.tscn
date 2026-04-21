@@ -12,5 +12,3 @@ y_sort_enabled = true
 [node name="Player" parent="." unique_id=1283246152 instance=ExtResource("1_uwrxv")]
 position = Vector2(3, 44)
 motion_mode = 1
-mouvment_speed = 120.0
-inv = null

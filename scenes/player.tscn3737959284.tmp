@@ -6,11 +6,42 @@
 [ext_resource type="Texture2D" uid="uid://dr0u6ci4dl1x2" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Idle_left.png" id="4_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://dvnny23m5w8a0" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Idle-right.png" id="5_fjrip"]
 [ext_resource type="Texture2D" uid="uid://d0afsdlmcju24" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Idle_up.png" id="5_tuyoq"]
-[ext_resource type="PackedScene" uid="uid://breoesqvbas63" path="res://scenes/ui/game_screen.tscn" id="7_y4r1p"]
 [ext_resource type="Script" uid="uid://dddouhdtijh6x" path="res://scripts/state_machine/node_state_machine.gd" id="9_y4r1p"]
 [ext_resource type="Script" uid="uid://bgmtl8agjsl88" path="res://scripts/state_machine/idle_state.gd" id="10_d2wvv"]
-[ext_resource type="Script" uid="uid://bndjok5x603a2" path="res://hit_component.gd" id="11_3v2ag"]
 [ext_resource type="Script" uid="uid://dif1q3bpqc4li" path="res://scripts/state_machine/walk_state.gd" id="11_d2wvv"]
+
+[sub_resource type="GDScript" id="GDScript_ur7pv"]
+script/source = "extends Resource
+
+class_name Inv
+
+signal update
+
+@export var slots: Array[InvSlot]
+
+func insert(item: InvItem):
+	var itemslots = slots.filter(func(slot): return slot.item == item)
+	if !itemslots.is_empty():
+		itemslots[0].amount += 1
+	else:
+		var emptyslots = slots.filter(func(slot): return slot.item == null)
+		if !emptyslots[0].is_empty():
+			emptyslots[0].item = item
+			emptyslots[0].amount = 1
+	update.emit()
+"
+
+[sub_resource type="GDScript" id="GDScript_y4r1p"]
+script/source = "extends Resource
+
+class_name InvSlot
+
+@export var item: InvItem
+@export var amount: int
+"
+
+[sub_resource type="Resource" id="Resource_d2wvv"]
+script = SubResource("GDScript_ur7pv")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -478,13 +509,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oprun"]
 size = Vector2(12, 11)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_y4r1p"]
-radius = 4.0
-
 [node name="Player" type="CharacterBody2D" unique_id=1283246152]
 y_sort_enabled = true
 script = ExtResource("1_g2els")
-current_tool = null
+inv = SubResource("Resource_d2wvv")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1465661486]
 unique_name_in_owner = true
@@ -502,8 +530,6 @@ shape = SubResource("RectangleShape2D_oprun")
 position = Vector2(0, 2)
 zoom = Vector2(4, 4)
 
-[node name="GameScreen" parent="Camera2D" unique_id=229431338 instance=ExtResource("7_y4r1p")]
-
 [node name="StateMachine" type="Node" parent="." unique_id=260650042 node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("9_y4r1p")
 initial_node_state = NodePath("Idle")
@@ -517,12 +543,3 @@ animated_sprite_2d = NodePath("../../sprite")
 script = ExtResource("11_d2wvv")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
-
-[node name="HitComponent" type="Area2D" parent="." unique_id=515495259]
-script = ExtResource("11_3v2ag")
-metadata/_custom_type_script = "uid://bndjok5x603a2"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitComponent" unique_id=1023502297]
-position = Vector2(0, 7)
-shape = SubResource("CircleShape2D_y4r1p")
-debug_color = Color(0.86572486, 0.0005794942, 0.8626157, 0.41960785)

@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://nl60pt5wgepw"]
 
 [ext_resource type="Texture2D" uid="uid://blw26fqhqypyx" path="res://assets/animals/Free Chicken Sprites.png" id="1_374a2"]
+[ext_resource type="Script" uid="uid://bqo6vxurs6iv2" path="res://scenes/chicken/chicken.gd" id="1_i53ga"]
 [ext_resource type="Script" uid="uid://dddouhdtijh6x" path="res://scripts/state_machine/node_state_machine.gd" id="2_byfli"]
 [ext_resource type="Script" uid="uid://dnuasks13j4ib" path="res://scenes/chicken/idle_state.gd" id="3_m0ksr"]
 [ext_resource type="Script" uid="uid://bvlanu65v6eu" path="res://scenes/chicken/walk_state.gd" id="4_m0ksr"]
+[ext_resource type="PackedScene" uid="uid://b5qk75yfjx23b" path="res://scenes/components/hurt_component.tscn" id="5_cuvf0"]
+[ext_resource type="PackedScene" uid="uid://b4dodspesbvyl" path="res://scenes/components/damage_component.tscn" id="6_q6btw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hiwe4"]
 atlas = ExtResource("1_374a2")
@@ -63,8 +66,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_xgs3m"]
 radius = 4.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_q6btw"]
+radius = 6.0827627
+
 [node name="Chicken" type="CharacterBody2D" unique_id=1800677912]
 y_sort_enabled = true
+script = ExtResource("1_i53ga")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1151893772]
 position = Vector2(0, -6)
@@ -94,3 +101,13 @@ script = ExtResource("4_m0ksr")
 character = NodePath("../..")
 animated_sprite_2D = NodePath("../../AnimatedSprite2D")
 navigation_agent_2D = NodePath("../../NavigationAgent2D")
+
+[node name="HurtComponent" parent="." unique_id=735315841 instance=ExtResource("5_cuvf0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=1702867418]
+position = Vector2(-1, -4)
+shape = SubResource("CircleShape2D_q6btw")
+debug_color = Color(0.80364954, 0.0039694393, 1, 0.41960785)
+
+[node name="DamageComponent" parent="." unique_id=1374175031 instance=ExtResource("6_q6btw")]
+max_damage = 3

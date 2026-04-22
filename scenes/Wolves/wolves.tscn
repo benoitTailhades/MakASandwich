@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://cedmf4gqniwkh"]
 
+[ext_resource type="Script" uid="uid://csy2dgifwecwx" path="res://scenes/Wolves/wolves.gd" id="1_4y26i"]
 [ext_resource type="Texture2D" uid="uid://2txrg4hfv8id" path="res://assets/animals/wolfsheet1.png" id="1_m6cts"]
 [ext_resource type="Script" uid="uid://dddouhdtijh6x" path="res://scripts/state_machine/node_state_machine.gd" id="2_fk8r1"]
 [ext_resource type="Script" uid="uid://cbi1v10klhhb8" path="res://scenes/Wolves/idle_state.gd" id="3_bomm5"]
 [ext_resource type="Script" uid="uid://db0bayuywbinx" path="res://scenes/Wolves/walk_state.gd" id="4_4y26i"]
+[ext_resource type="PackedScene" uid="uid://b5qk75yfjx23b" path="res://scenes/components/hurt_component.tscn" id="5_fk8r1"]
+[ext_resource type="PackedScene" uid="uid://b4dodspesbvyl" path="res://scenes/components/damage_component.tscn" id="6_bomm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6hmd"]
 atlas = ExtResource("1_m6cts")
@@ -126,8 +129,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ognts"]
 size = Vector2(13.5, 12.34375)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bomm5"]
+
 [node name="Wolves" type="CharacterBody2D" unique_id=1800677912]
 y_sort_enabled = true
+script = ExtResource("1_4y26i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1151893772]
 position = Vector2(1, -6)
@@ -159,3 +165,13 @@ script = ExtResource("4_4y26i")
 character = NodePath("../..")
 animated_sprite_2D = NodePath("../../AnimatedSprite2D")
 navigation_agent_2D = NodePath("../../NavigationAgent2D")
+
+[node name="HurtComponent" parent="." unique_id=735315841 instance=ExtResource("5_fk8r1")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=431232467]
+position = Vector2(1, -5)
+shape = SubResource("CircleShape2D_bomm5")
+debug_color = Color(0.66706336, 0.31332126, 1, 0.41960785)
+
+[node name="DamageComponent" parent="." unique_id=1374175031 instance=ExtResource("6_bomm5")]
+max_damage = 5

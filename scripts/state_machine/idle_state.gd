@@ -19,7 +19,7 @@ func _on_physics_process(_delta : float) -> void:
 	elif player.player_direction == Vector2.RIGHT:
 		animated_sprite_2d.play("Right-Idle")
 	else:
-		animated_sprite_2d.play("Up-Idle")
+		animated_sprite_2d.play("Up-Down")
 	
 
 func _on_next_transitions() -> void:

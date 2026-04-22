@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Make a sandwich"
-run/main_scene="uid://yspn6ia7vyq"
+run/main_scene="uid://kwwghjsyeam2"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,8 @@ InteractionManager="*uid://cxa5didsvn2pa"
 ToolManager="*uid://cp6o1t42b8bq0"
 DayAndNightCycleManager="*uid://bwr1x2gi6edoc"
 InventoryManager="*uid://c3conpw71135y"
+GameManager="*uid://cfasyrd4mwdiv"
+SceneManager="*uid://cpmg77weyb2f2"
 
 [display]
 

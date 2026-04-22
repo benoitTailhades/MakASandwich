@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://kwwghjsyeam2"]
+
+[ext_resource type="Script" uid="uid://ctoptwf8gdsfd" path="res://scenes/ui/main_menu.gd" id="1_1g8jr"]
+[ext_resource type="Theme" uid="uid://niur2lltdn6c" path="res://scenes/ui/game_ui_theme.tres" id="1_sl1te"]
+[ext_resource type="PackedScene" uid="uid://bju8kqtnunwo" path="res://scenes/game_menu_background.tscn" id="2_fe2o3"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1726319559]
+script = ExtResource("1_1g8jr")
+
+[node name="Game" parent="." unique_id=111376594 instance=ExtResource("2_fe2o3")]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1418339866]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sl1te")
+theme_type_variation = &"DarkWoodPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1747726234]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer" unique_id=577333858]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8352941, 0.4117647, 1)
+theme_override_colors/font_shadow_color = Color(0.61200595, 0.33679816, 5.7756904e-07, 0.95686275)
+theme_override_constants/shadow_offset_x = 5
+theme_override_font_sizes/font_size = 100
+text = "MAKASANDWICH"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1051343725]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1660711865]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+theme_override_font_sizes/font_size = 50
+text = "START"
+
+[node name="QuitGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1927882811]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]

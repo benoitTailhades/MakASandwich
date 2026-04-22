@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dtrjo83yq88cp"]
+
+[ext_resource type="AudioStream" uid="uid://gss1384oksat" path="res://The_Messenger(1).mp3" id="1_g84o6"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=608400504]
+stream = ExtResource("1_g84o6")
+volume_db = 24.0

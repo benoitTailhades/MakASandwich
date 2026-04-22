@@ -23,7 +23,7 @@ texture = SubResource("AtlasTexture_nw35g")
 [node name="InteractionArea" type="Area2D" parent="." unique_id=2023042847]
 collision_layer = 0
 script = ExtResource("3_pap24")
-action_name = "cook the bread"
+action_name = "cook the bread (10 corns)"
 metadata/_custom_type_script = "uid://did4owx2hygir"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=900316660]

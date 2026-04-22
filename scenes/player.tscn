@@ -29,8 +29,9 @@
 [ext_resource type="Script" uid="uid://bcrfd3a71aa48" path="res://scripts/state_machine/mining_state.gd" id="20_l71n6"]
 [ext_resource type="Texture2D" uid="uid://bx6dhaia0cfy5" path="res://assets/16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Up-Watering.png" id="22_487ah"]
 [ext_resource type="Script" path="res://scripts/state_machine/tilling_state.gd" id="25_dt7fs"]
-[ext_resource type="Script" path="res://scripts/state_machine/watering-state.gd" id="30_md1ol"]
+[ext_resource type="Script" uid="uid://bjvigdhxd3jm0" path="res://scripts/state_machine/watering-state.gd" id="30_md1ol"]
 [ext_resource type="Script" uid="uid://bndjok5x603a2" path="res://scenes/components/hit_component.gd" id="31_wnwbv"]
+[ext_resource type="AudioStream" uid="uid://bsbgh7lfqsofp" path="res://freesound_community-running-in-grass-6237.mp3" id="32_gl8cc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -956,11 +957,12 @@ script = ExtResource("10_d2wvv")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
 
-[node name="Walk" type="Node" parent="StateMachine" unique_id=850595309 node_paths=PackedStringArray("player", "animated_sprite_2d")]
+[node name="Walk" type="Node" parent="StateMachine" unique_id=850595309 node_paths=PackedStringArray("player", "animated_sprite_2d", "mouvement_audio")]
 script = ExtResource("11_d2wvv")
 player = NodePath("../..")
 animated_sprite_2d = NodePath("../../sprite")
 speed = 100
+mouvement_audio = NodePath("../../mouvement_audio")
 
 [node name="Chopping" type="Node" parent="StateMachine" unique_id=228140844 node_paths=PackedStringArray("player", "animated_sprite_2d", "hit_component_colision_shape")]
 script = ExtResource("16_fulsm")
@@ -994,3 +996,8 @@ metadata/_custom_type_script = "uid://bndjok5x603a2"
 position = Vector2(0, 14)
 shape = SubResource("CircleShape2D_wnwbv")
 debug_color = Color(0.84027904, 0.0011514801, 0.9238308, 0.41960785)
+
+[node name="mouvement_audio" type="AudioStreamPlayer" parent="." unique_id=1566632000]
+stream = ExtResource("32_gl8cc")
+volume_db = 5.012
+parameters/looping = true

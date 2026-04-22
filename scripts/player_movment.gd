@@ -9,10 +9,7 @@ var player_direction : Vector2
 
 func _ready():
 	add_to_group("player")
-	InventoryManager.add_collectable("bread")
 	InventoryManager.add_collectable("salad")
-	InventoryManager.add_collectable("tomato")
-	InventoryManager.add_collectable("chicken")
 	ToolManager.tool_selected.connect(on_tool_selected)
 
 func on_tool_selected(tool: DataTypes.Tools):
